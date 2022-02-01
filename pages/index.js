@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Flex, Box, Text, Button } from '@chakra-ui/react';
 
 import { fetchApi, baseUrl } from '../utils/fetchApi';
+import { Property } from '../components/Property';
 
 const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, linkName, imageUrl }) => (
   <Flex flexWrap="wrap" justifyContent="center" m="10">
@@ -19,7 +20,7 @@ const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, linkName, i
 )
 
 export default function Home({ propertiesForSale, propertiesForRent }) {
-  console.log(propertiesForSale, propertiesForRent);
+  // console.log(propertiesForSale, propertiesForRent);
   return (
     <div>
       <Box>
@@ -35,6 +36,9 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
         />
         <Flex flexWrap="wrap">
           {/* fetch the properties and map over them... */}
+          {propertiesForRent.map((property) => 
+            <Property property={property} key={property.id} />
+          )}
         </Flex>
         <Banner 
           purpose="BUY A HOME"
@@ -48,6 +52,9 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
         />
         <Flex flexWrap="wrap">
           {/* fetch the properties and map over them... */}
+          {propertiesForSale.map((property) => 
+            <Property property={property} key={property.id} />
+          )}
         </Flex>
       </Box>
     </div>
