@@ -6,8 +6,15 @@ import { fetchApi, baseUrl } from '../utils/fetchApi';
 import { Property } from '../components/Property';
 
 const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, linkName, imageUrl }) => (
-  <Flex flexWrap="wrap" justifyContent="center" m="10">
-    <Image src={imageUrl} width={500} height={300} alt='banner' />
+  <Flex flexWrap="wrap" align={'center'} justifyContent="center" width={1280} height={855} marginBottom="10" marginTop="10" bg={'white.400'} style={{ 
+    backgroundImage: `url(${imageUrl})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize:"contain",
+    align: "center",
+    justifyContent: "flex-start"
+  }} >
+    {/* <Image src={imageUrl} width={500} height={300} alt='banner' /> */}
+    {/* <Image src={imageUrl} width={1000} height={800} alt='banner' /> */}
     <Box p="5">
       <Text color="gray.500" fontSize="sm" fontWeight="medium">{purpose}</Text>
       <Text fontSize="3xl" fontWeight="bold">{title1}<br />{title2}</Text>
