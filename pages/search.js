@@ -30,7 +30,7 @@ const Search = ({ properties }) => {
         <Icon paddingLeft="2" w="7" as={BsFilter} />
       </Flex>
       {searchFilters && <SearchFilters />}
-      <Text fontSize={'2x1'} p={4} fontWeight={'bold'}>
+      <Text fontSize={'2xl'} p={4} fontWeight={'bold'}>
         Properties {router.query.purpose}
       </Text>
       <Flex flexWrap={'wrap'}>
@@ -39,7 +39,7 @@ const Search = ({ properties }) => {
       {properties.length === 0 &&(
         <Flex justifyContent={"center"} alignItems={"center"} flexDirection={"column"} marginTop={5} marginBottom={5} >
           <Image alt="No Result" src={noresult} />
-          <Text fontSize={'2x1'} marginTop={3} >No Result Found</Text>
+          <Text fontSize={'2xl'} marginTop={3} >No Result Found</Text>
         </Flex>
       )}
     </Box>
